@@ -472,5 +472,21 @@ document.querySelectorAll('[data-recommendation-mode]').forEach(btn=>btn.addEven
 const originalLoadApiButton=$('#loadApi');if(originalLoadApiButton)originalLoadApiButton.addEventListener('click',()=>setTimeout(renderRecommendations,1800));
 renderRecommendations();
 })();
+<script>
+(function () {
+  function hideLoader() {
+    const loader = document.getElementById('introLoader');
+
+    if (loader) {
+      loader.classList.add('departing');
+      setTimeout(() => loader.remove(), 700);
+    }
+
+    document.body.classList.remove('intro-running', 'ready');
+  }
+
+  setTimeout(hideLoader, 4000);
+  window.addEventListener('load', hideLoader, { once: true });
+})();
 </script>
 </body></html>

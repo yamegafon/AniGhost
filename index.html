@@ -478,8 +478,12 @@ renderRecommendations();
     const loader = document.getElementById('introLoader');
 
     if (loader) {
-      loader.classList.add('departing');
-      setTimeout(() => loader.remove(), 700);
+      loader.style.transition = 'opacity 0.5s ease';
+      loader.style.opacity = '0';
+
+      setTimeout(function () {
+        loader.style.display = 'none';
+      }, 500);
     }
 
     document.body.classList.remove('intro-running', 'ready');

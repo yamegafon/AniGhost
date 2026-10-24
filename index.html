@@ -472,27 +472,5 @@ document.querySelectorAll('[data-recommendation-mode]').forEach(btn=>btn.addEven
 const originalLoadApiButton=$('#loadApi');if(originalLoadApiButton)originalLoadApiButton.addEventListener('click',()=>setTimeout(renderRecommendations,1800));
 renderRecommendations();
 })();
-</script>
-
-<script>
-(function () {
-  function hideLoader() {
-    const loader = document.getElementById('introLoader');
-
-    if (loader) {
-      loader.style.transition = 'opacity 0.5s ease';
-      loader.style.opacity = '0';
-
-      setTimeout(function () {
-        loader.style.display = 'none';
-      }, 500);
-    }
-
-    document.body.classList.remove('intro-running', 'ready');
-  }
-
-  setTimeout(hideLoader, 4000);
-  window.addEventListener('load', hideLoader, { once: true });
-})();
-</script>
-</body></html>
+</body>
+</html>
